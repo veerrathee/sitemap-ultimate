@@ -93,13 +93,13 @@ after_initialize do
   end
 
   Discourse::Application.routes.prepend do
-    mount ::DiscourseSitemap::Engine, at: "/sitemap"
+    mount ::DiscourseSitemap::Engine, at: "/"
   end
 
   DiscourseSitemap::Engine.routes.draw do
-    get ".xml" => "sitemap#index"
+    get "sitemap.xml" => "sitemap#index"
     get "news.xml" => "sitemap#news"
-    get ":page.xml" => "sitemap#default"
+    get "sitemap_:page.xml" => "sitemap#default"
   end
 
 end

@@ -2,7 +2,7 @@
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <% 1.upto(@size) do |i| %>
    <sitemap>
-      <loc><%= Discourse.base_url %>/sitemap/<%= i %>.xml</loc>
+      <loc><%= Discourse.base_url %>/sitemap_<%= i %>.xml</loc>
       <lastmod><%= @lastmod.xmlschema %></lastmod>
    </sitemap>
    <% end %>
